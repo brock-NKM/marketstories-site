@@ -1,0 +1,156 @@
+{
+  "_readme": "Single source for prices, plans, timing, the free sample, add-on, cancellation wording, contact details, the Tally form and payment links. Edit here, then run `python3 site-src/build_site.py`. PENDING_* marks a placeholder still waiting on someone.",
+  "currency_note": "All prices are per month, plus HST.",
+  "currency_footer": "All prices in Canadian dollars, plus HST.",
+  "plans": {
+    "status": "CONFIRMED 2026-11-14",
+    "rows": [
+      "Branded posts each month",
+      "Built to match your feed",
+      "TRREB market update, rates news, tip and local post",
+      "Reel script",
+      "Past-client message",
+      "Reels",
+      "Monthly recap (1-page PDF and email block)",
+      "Your approval before anything is used"
+    ],
+    "items": [
+      {
+        "name": "Essentials",
+        "availability": "available",
+        "price": 69,
+        "button": "Start Essentials",
+        "includes": {
+          "Branded posts each month": "4",
+          "Built to match your feed": "Yes",
+          "TRREB market update, rates news, tip and local post": "Yes",
+          "Your approval before anything is used": "Yes"
+        },
+        "bullets": [
+          "4 posts a month",
+          "Your colours, type and logo",
+          "You approve every post"
+        ]
+      },
+      {
+        "name": "Growth",
+        "availability": "available",
+        "price": 149,
+        "button": "Start Growth",
+        "includes": {
+          "Branded posts each month": "8",
+          "Built to match your feed": "Yes",
+          "TRREB market update, rates news, tip and local post": "Yes",
+          "Reel script": "1",
+          "Past-client message": "1",
+          "Your approval before anything is used": "Yes"
+        },
+        "bullets": [
+          "Everything in Essentials, plus…",
+          "8 posts a month, not 4",
+          "1 reel script",
+          "1 past-client message"
+        ]
+      },
+      {
+        "name": "Pro",
+        "availability": "waitlist",
+        "expected_price": 249,
+        "button": "Join the waitlist",
+        "waitlist_subject": "Pro waitlist",
+        "_note": "Not buyable yet. Shown as 'Coming soon' with no price and a 'Join the waitlist' button. expected_price is kept for later and is not shown on the site.",
+        "includes": {
+          "Branded posts each month": "8",
+          "Built to match your feed": "Yes",
+          "TRREB market update, rates news, tip and local post": "Yes",
+          "Reel script": "1",
+          "Past-client message": "1",
+          "Reels": "4",
+          "Monthly recap (1-page PDF and email block)": "Yes",
+          "Your approval before anything is used": "Yes"
+        }
+      }
+    ],
+    "_v6_note": "site-v6 shows only plans with availability 'available', as two cards with their 'bullets'. Pro (waitlist) is not shown on the page."
+  },
+  "addon": {
+    "status": "CONFIRMED 2026-11-14",
+    "name": "Posted for you",
+    "price": 40,
+    "description": "We schedule your approved posts to your accounts. Nothing posts until you tap approve."
+  },
+  "mid_month_note": "Signing up mid-month? You get a kit right away, built from the latest TRREB report.",
+  "cancellation": {
+    "status": "CONFIRMED 2026-11-14",
+    "notice_days": 7,
+    "short": "Cancel with 7 days’ notice.",
+    "faq": "Give us 7 days’ notice before your next billing date and you won’t be billed again."
+  },
+  "contact_email": "brock@marketstories.ca",
+  "mailing_address": {
+    "status": "PENDING_BROCK",
+    "value": ""
+  },
+  "payment_links": {
+    "status": "PENDING_JET",
+    "essentials": "",
+    "growth": "",
+    "_note": "Stripe payment links. Empty = plan buttons open the form with that plan picked."
+  },
+  "hero": {
+    "status": "APPROVED 2026-11-16 (lean-r5)",
+    "headline": "Your market posts, finally on brand.",
+    "_note": "Shown as the H1 and in the page title."
+  },
+  "timing": {
+    "status": "CONFIRMED 2026-11-15 (revision round 2 brief)",
+    "sample_business_days": 3,
+    "kit_business_days_after_release": 5,
+    "_note": "Sample turnaround includes Brock's review. Drop to 2 once that review is handed off."
+  },
+  "free_sample": {
+    "status": "CONFIRMED 2026-11-15",
+    "summary": "One ready-to-post post built to your feed, with this month’s TRREB numbers for your area and a caption to go with it.",
+    "essentials_line": "Essentials adds the whole month: 4 posts built to your feed, covering the TRREB market update, rates news, a tip and a local post."
+  },
+  "tally": {
+    "status": "LIVE",
+    "form_id": "LD788l",
+    "_note": "Tally form LD788l. Status LIVE: the page loads Tally's embed and every sample/claim button opens it with hidden fields (choice, path, and vibe/font/palette/preview_name or email when relevant). The form itself must be published in Tally or it will not open for visitors. Newsletter signup is off for the social-only launch (coming-soon line only; no Notify me control). Payment links stay PENDING_JET, so plan buttons go to the free-sample flow.",
+    "choices": [
+      "Free sample: match my feed",
+      "Free sample: starter style",
+      "Claim: December kit",
+      "Essentials",
+      "Growth",
+      "Newsletter: notify me"
+    ],
+    "fields": [
+      "Instagram handle (match my feed) or nothing (starter style)",
+      "Full name",
+      "Registered title",
+      "Brokerage legal name",
+      "Email",
+      "Area you serve",
+      "Anything we should know (optional)",
+      "Link to a few of your own photos (optional)",
+      "I have the rights to use the photos I share (checkbox)"
+    ],
+    "hidden_fields": [
+      "choice",
+      "path",
+      "vibe",
+      "font",
+      "palette",
+      "preview_name",
+      "email"
+    ],
+    "_v6_note": "site-v6.3: newsletter footer is a coming-soon line only (no form). Vibe picks come from a small dialog behind 'I'm starting fresh'; preview_name is sent empty."
+  },
+  "newsletter": {
+    "status": "COMING SOON (social-only launch, 2026-11-17)",
+    "line": "Newsletter coming soon.",
+    "consent": "Email me the monthly GTA market read.",
+    "_note": "Do not render an email field, Notify me button, or consent checkbox while status is coming soon. The footer shows the 'line' text only."
+  }
+}
