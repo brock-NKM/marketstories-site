@@ -92,10 +92,10 @@
     "value": ""
   },
   "payment_links": {
-    "status": "PENDING_JET",
-    "essentials": "",
-    "growth": "",
-    "_note": "Stripe payment links. Empty = plan buttons open the form with that plan picked."
+    "status": "LIVE",
+    "essentials": "https://buy.stripe.com/aFa5kC6isdZq4bh0Pl7kc0X",
+    "growth": "https://buy.stripe.com/00wcN4gX6f3u8rxeGb7kc0Y",
+    "_note": "Live Stripe payment links (CAD, monthly). Plan buttons go to checkout. Empty URL + status not LIVE = plan buttons open the form with that plan picked."
   },
   "hero": {
     "status": "APPROVED 2026-11-16 (lean-r5)",
@@ -116,7 +116,7 @@
   "tally": {
     "status": "LIVE",
     "form_id": "LD788l",
-    "_note": "Tally form LD788l. Status LIVE: the page loads Tally's embed and every sample/claim button opens it with hidden fields (choice, path, and vibe/font/palette/preview_name or email when relevant). The form itself must be published in Tally or it will not open for visitors. Newsletter signup is off for the social-only launch (coming-soon line only; no Notify me control). Payment links stay PENDING_JET, so plan buttons go to the free-sample flow.",
+    "_note": "Tally form LD788l. Status LIVE: the page loads Tally's embed and every sample/claim button opens it with hidden fields (choice, path, and vibe/font/palette/preview_name or email when relevant). The form itself must be published in Tally or it will not open for visitors. Newsletter signup is off for the social-only launch (coming-soon line only; no Notify me control). Payment links are LIVE, so Start Essentials and Start Growth open Stripe checkout.",
     "choices": [
       "Free sample: match my feed",
       "Free sample: starter style",
