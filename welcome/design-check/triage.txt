@@ -1,0 +1,18 @@
+Design checks (site) against DESIGN.md v1.2
+
+ACT ON (3)
+  - hallmark FAIL gate 26a: no :focus-visible styling anywhere [index.html:1]
+      fix: A focus ring at 3:1 or better, instant
+  - hallmark FAIL gate 34: no overflow-x: clip on html and body [index.html:1]
+      fix: overflow-x: clip on both html and body
+  - hallmark REFLEX gate 26b: no :active styling anywhere [index.html:1]
+      fix: All eight states; guard: not a form control, no aria-disabled anywhere
+
+REVIEW (1)
+  - impeccable warning cramped-padding: <div> "footer__legal": children flush against border-top on top (no inset) [index.html]
+      -> DESIGN.md s2: on artboards the canvas or a full-bleed photo can trip this. It's a false positive when text sits 80 px or more from the edge; real boxes need 0.5em or 8 px of inset.
+
+ACCEPTED by DESIGN.md (1)
+  - impeccable cream-palette: DESIGN.md s4.1: cream paper is the brand (accepted exception) (x1)
+
+NOT APPLICABLE to site (0)

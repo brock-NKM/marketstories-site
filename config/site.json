@@ -47,7 +47,7 @@
         },
         "bullets": [
           "Everything in Essentials, plus…",
-          "8 posts a month, not 4",
+          "8 posts a month",
           "1 reel script",
           "1 past-client message"
         ]
@@ -98,8 +98,9 @@
     "_note": "Live Stripe payment links (CAD, monthly). Plan buttons go to checkout. Empty URL + status not LIVE = plan buttons open the form with that plan picked."
   },
   "hero": {
-    "status": "APPROVED 2026-11-16 (lean-r5)",
-    "headline": "Your market posts, finally on brand.",
+    "status": "v7 DRAFT 2026-11-19 (was: Your market posts, finally on brand.)",
+    "headline": "Look like the local expert. Skip the content.",
+    "lede": "Market posts in your brand, with your area’s TRREB numbers, every month.",
     "_note": "Shown as the H1 and in the page title."
   },
   "timing": {
@@ -146,6 +147,21 @@
       "email"
     ],
     "_v6_note": "site-v6.3: newsletter footer is a coming-soon line only (no form). Vibe picks come from a small dialog behind 'I'm starting fresh'; preview_name is sent empty."
+  },
+  "welcome": {
+    "status": "BUILT 2026-11-17 (site-v6.5)",
+    "url": "https://marketstories.ca/welcome/",
+    "tally_form_id": "rDOM9N",
+    "tally_status": "LIVE",
+    "_note": "After-payment page. Both Stripe Payment Links redirect here (optionally ?plan=essentials|growth&session_id={CHECKOUT_SESSION_ID}). Onboarding form spec: docs/onboarding-tally-v1.md. Set tally_form_id and tally_status LIVE once the form is published; until then the page shows an 'Email us your look' button."
+  },
+  "founding": {
+    "status": "LIVE",
+    "code": "FOUNDER",
+    "headline": "Founding 10: 20% off your first year.",
+    "line": "Use code FOUNDER at checkout. 20% off your first 12 months, for the first 10 agents.",
+    "prices": {"essentials": 55.20, "growth": 119.20},
+    "_note": "Founding 10 offer (pinned post v2.4). Stripe caps the code at 10 redemptions. Set status to anything but LIVE to hide the band."
   },
   "newsletter": {
     "status": "COMING SOON (social-only launch, 2026-11-17)",

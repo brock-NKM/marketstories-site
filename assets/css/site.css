@@ -76,7 +76,7 @@ main > section { padding: 44px 0 52px; }
 .swipe__item { scroll-snap-align: start; border-radius: 10px; overflow: hidden; box-shadow: 0 1px 2px rgba(0, 0, 0, .08), 0 8px 24px rgba(0, 0, 0, .08); background: #ddd; }
 .swipe__item img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
 
-.examples { background: #fff; }
+.examples { background: var(--card); }
 .examples h2 { margin-bottom: 0; }
 .row { margin-top: 34px; }
 .row__who { display: flex; gap: 10px; align-items: baseline; margin-bottom: 12px; font-size: 1.0625rem; }
@@ -97,7 +97,7 @@ main > section { padding: 44px 0 52px; }
 /* Pricing: two cards */
 .plans h2 { margin-bottom: 24px; }
 .plans__grid { display: grid; gap: 14px; }
-.plan { background: #fff; border: 2px solid var(--ink); border-radius: var(--r); padding: 22px; display: flex; flex-direction: column; }
+.plan { background: var(--card); border: 2px solid var(--ink); border-radius: var(--r); padding: 22px; display: flex; flex-direction: column; }
 .plan h3 { font-family: var(--mono); font-size: 1rem; text-transform: uppercase; letter-spacing: .06em; font-weight: 500; }
 .plan__price { margin: 6px 0 14px; color: var(--stone); font-size: 1.0625rem; }
 .plan__price span { font-size: 3rem; font-weight: 800; color: var(--ink); letter-spacing: -.03em; line-height: 1; }
@@ -139,7 +139,7 @@ main > section { padding: 44px 0 52px; }
 .pick legend { font-family: var(--mono); font-size: .8125rem; text-transform: uppercase; letter-spacing: .08em; color: var(--stone); margin-bottom: 8px; }
 .pick__x { position: absolute; top: 10px; right: 10px; width: 48px; height: 48px; border: 0; background: transparent; font-size: 2rem; cursor: pointer; color: var(--ink); }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.chip { min-height: 46px; padding: 0 16px; border: 2px solid var(--ink); border-radius: 999px; background: #fff; color: var(--ink); font: 700 1rem var(--sans); cursor: pointer; }
+.chip { min-height: 46px; padding: 0 16px; border: 2px solid var(--ink); border-radius: 999px; background: var(--card); color: var(--ink); font: 700 1rem var(--sans); cursor: pointer; }
 .chip[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
 .chip--serif { font-family: "Playfair Display", Georgia, serif; }
 .chip--modern { font-family: "Manrope", var(--sans); }
@@ -226,3 +226,21 @@ main > section { padding: 44px 0 52px; }
   .hero > .hero__end { grid-area: end; margin-top: 32px; padding: 0; flex-direction: column; align-items: flex-start; gap: 14px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn, .way__go { transition: none; } }
+
+/* v6.5 hero: two side-by-side choices (free sample / start now). Mobile first, equal columns from 320px. */
+.choose { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; width: 100%; }
+.choose__opt { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.choose .btn { min-height: 56px; padding: 0 10px; font-size: 1.0625rem; white-space: nowrap; }
+.choose__note { font-size: .875rem; line-height: 1.35; color: var(--stone); text-align: center; }
+@media (max-width: 359px) { .choose .btn { font-size: .9375rem; padding: 0 6px; } }
+@media (min-width: 720px) { .choose { max-width: 560px; gap: 16px; } .choose .btn { min-height: 60px; font-size: 1.1875rem; } .choose__note { font-size: .9375rem; } }
+@media (min-width: 960px) { .hero > .hero__end .choose { max-width: 540px; } }
+
+/* v6.5 /welcome/ after Stripe checkout */
+.page--welcome h2 { margin-top: 1.8em; }
+.onb { margin-top: 16px; }
+.onb--mail { background: var(--card); border: 2px solid var(--ink); border-radius: var(--r); padding: 20px; }
+
+.steps { padding-left: 1.4em; }
+.steps li { margin-bottom: .7em; }
+.choose__note span { display: inline-block; }

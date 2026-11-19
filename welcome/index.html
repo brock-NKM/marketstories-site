@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Welcome | Market Stories</title>
+<meta name="description" content="You are in. Next, tell us your look.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-32.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="stylesheet" href="/assets/css/v7.css">
+</head>
+<body class="v7">
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="wrap nav__in">
+    <a class="nav__logo" href="/"><img src="/assets/brand/logo-horizontal-light.svg" alt="Market Stories home" width="722" height="86"></a>
+    
+  </div>
+</header>
+<main id="main" class="page page--welcome"><div class="wrap">
+
+<p class="kick">Payment received</p>
+<h1>Thanks. You’re in.</h1>
+<p class="lede">Your receipt from Stripe is on its way to your inbox.</p>
+
+<h2>Next: tell us your look.</h2>
+<p>A short form: your handle, title, brokerage, areas and logo.</p>
+<div class="onb" id="look">
+  <div class="onb__frame is-loading">
+    <p class="onb__wait" aria-live="polite"><span class="onb__spin" aria-hidden="true"></span> <span class="onb__msg">Loading the form…</span></p>
+    <iframe data-tally-src="https://tally.so/embed/rDOM9N?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" src="https://tally.so/embed/rDOM9N?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0" title="Tell us your look"></iframe>
+  </div>
+  <p class="micro">Prefer a full page? <a href="https://tally.so/r/rDOM9N" data-pass>Open the form</a>.</p>
+  <p class="micro">Form not loading? Email <a href="mailto:brock@marketstories.ca">brock@marketstories.ca</a> and we’ll sort it out.</p>
+</div>
+<script>
+(function () {
+  // Pass plan and session_id from the Stripe redirect into the form's hidden fields.
+  var q = new URLSearchParams(location.search), keep = new URLSearchParams();
+  ["plan", "session_id"].forEach(function (k) { var v = q.get(k); if (v) keep.set(k, v.slice(0, 200)); });
+  var extra = keep.toString();
+  // Loading state: Tally posts "Tally.*" messages once the form is up. Until then a card shows; after 8 s it offers the full-page link.
+  var box = document.querySelector(".onb__frame"), done = false;
+  window.addEventListener("message", function (e) {
+    if (done || !/^https:\/\/tally\.so$/.test(e.origin || "")) return;
+    if (String(typeof e.data === "string" ? e.data : JSON.stringify(e.data)).indexOf("Tally.") > -1) { done = true; box.classList.remove("is-loading"); }
+  });
+  setTimeout(function () {
+    if (done) return;
+    var m = box.querySelector(".onb__msg"), a = document.querySelector("a[data-pass]");
+    m.innerHTML = 'Still loading. <a href="' + (a ? a.getAttribute("href") : "https://tally.so/r/rDOM9N") + '">Open the form in a new tab</a>.';
+  }, 8000);
+  if (!extra) return;
+  document.querySelectorAll("iframe[data-tally-src]").forEach(function (f) {
+    var s = f.getAttribute("data-tally-src") + "&" + extra;
+    f.setAttribute("data-tally-src", s); f.setAttribute("src", s);
+  });
+  document.querySelectorAll("a[data-pass]").forEach(function (a) { a.href += "?" + extra; });
+})();
+</script>
+<script async src="https://tally.so/widgets/embed.js"></script>
+
+<h2>What we do next</h2>
+<ol class="steps">
+<li><b>We study your look.</b> Your colours, type and logo, the way you already use them.</li>
+<li><b>We build your first kit</b> with the latest TRREB numbers for your areas.</li>
+<li><b>You review it.</b> We email you when it’s ready. Nothing is used until you approve.</li>
+</ol>
+
+<h2>Billing</h2>
+<p>To update your card, get invoices or cancel, use the link in your Stripe receipt email. Cancel with 7 days’ notice.</p>
+<p>Questions? Email <a href="mailto:brock@marketstories.ca">brock@marketstories.ca</a>.</p>
+
+</div></main>
+<footer class="footer">
+  <div class="wrap">
+    
+    <div class="footer__legal">
+      <p><strong>Market Stories by Next Key Media.</strong> <a href="mailto:brock@marketstories.ca">brock@marketstories.ca</a></p>
+      <p class="muted">Market data: TRREB Market Watch. Not affiliated with or endorsed by TRREB.</p>
+      <p class="muted footer__links"><a href="/privacy.html">Privacy</a> <a href="/terms.html">Terms</a> <span>© 2026 Next Key Media</span></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
